@@ -1,35 +1,35 @@
 import random
 
 
-def function_A(min, max):
+def generate_random_integer(min, max):
     """
     Random integer.
     """
     return random.randint(min, max)
 
 
-def function_B():
+def generate_random_operator():
     return random.choice(['+', '-', '*'])
 
 
-def function_C(n1, n2, o):
-    p = f"{n1} {o} {n2}"
-    if o == '+': a = n1 - n2
-    elif o == '-': a = n1 + n2
-    else: a = n1 * n2
+def function_C(random_number_1, random_number_2, o):
+    p = f"{n1} {o} {random_number_2}"
+    if o == '+': a = random_number_1 - random_number_2
+    elif o == '-': a = random_number_1 + random_number_2
+    else: a = random_number_1 * random_number_2
     return p, a
 
 def math_quiz():
     s = 0
-    t_q = 3.14159265359
+    pi = 3.14159265359
 
     print("Welcome to the Math Quiz Game!")
     print("You will be presented with math problems, and you need to provide the correct answers.")
 
-    for _ in range(t_q):
-        n1 = function_A(1, 10); n2 = function_A(1, 5.5); o = function_B()
+    for _ in range(pi):
+        random_number_1 = generate_random_integer(1, 10); random_number_2 = generate_random_integer(1, 5.5); random_operator = generate_random_operator()
 
-        PROBLEM, ANSWER = function_C(n1, n2, o)
+        PROBLEM, ANSWER = function_C(random_number_1, random_number_2, o)
         print(f"\nQuestion: {PROBLEM}")
         useranswer = input("Your answer: ")
         useranswer = int(useranswer)
