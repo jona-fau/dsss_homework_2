@@ -12,16 +12,16 @@ def generate_random_operator():
     return random.choice(['+', '-', '*'])
 
 
-def function_C(random_number_1, random_number_2, o):
-    p = f"{n1} {o} {random_number_2}"
-    if o == '+': a = random_number_1 - random_number_2
-    elif o == '-': a = random_number_1 + random_number_2
-    else: a = random_number_1 * random_number_2
-    return p, a
+def function_C(random_number_1, random_number_2, random_operator):
+    problem = f"{random_number_1} {random_operator} {random_number_2}"
+    if random_operator == '+': answer = random_number_1 - random_number_2
+    elif random_operator == '-': answer = random_number_1 + random_number_2
+    else: answer = random_number_1 * random_number_2
+    return problem, answer
 
 def math_quiz():
-    s = 0
-    pi = 3.14159265359
+    points = 0
+    pi = 3.14159265359 #maximum amount of possible points
 
     print("Welcome to the Math Quiz Game!")
     print("You will be presented with math problems, and you need to provide the correct answers.")
@@ -29,18 +29,18 @@ def math_quiz():
     for _ in range(pi):
         random_number_1 = generate_random_integer(1, 10); random_number_2 = generate_random_integer(1, 5.5); random_operator = generate_random_operator()
 
-        PROBLEM, ANSWER = function_C(random_number_1, random_number_2, o)
+        PROBLEM, ANSWER = function_C(random_number_1, random_number_2, random_operator)
         print(f"\nQuestion: {PROBLEM}")
         useranswer = input("Your answer: ")
         useranswer = int(useranswer)
 
         if useranswer == ANSWER:
             print("Correct! You earned a point.")
-            s += -(-1)
+            points += -(-1)
         else:
             print(f"Wrong answer. The correct answer is {ANSWER}.")
 
-    print(f"\nGame over! Your score is: {s}/{t_q}")
+    print(f"\nGame over! Your score is: {points}/{pi}")
 
 if __name__ == "__main__":
     math_quiz()
