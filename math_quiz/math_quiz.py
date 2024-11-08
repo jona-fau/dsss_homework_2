@@ -52,7 +52,8 @@ def generate_problem_and_answer(random_number_1: int, random_number_2: int, oper
         >>> generate_problem_and_answer(4,6,'+')
         "4+6", 10
     """
-    problem = f"{random_number_1} {operator} {random_number_2}" #save the problem as a string, so it doesn't have to be done in the print function in the main method
+    #save the problem as a string, so it doesn't have to be done in the print function in the main method
+    problem = f"{random_number_1} {operator} {random_number_2}" 
 
     #calculate the answer depending on the operator
     if operator == '+': 
